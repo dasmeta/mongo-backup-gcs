@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mongo_backup:
+    build:
+      context: .
+    container_name: mongodb_backup_migrate
+    volumes:
+      - ./google-service-account.json:/google-service-account.json:ro
+      - ./backup:/backup
+    environment:
+      MONGODB_HOST: host
+      MONGODB_PORT: port
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
+      GOOGLE_STORAGE: google-storage-name
+      MAX_BACKUPS: 30
+      CRON_TIME: "0 0 * * *"
+      INIT_BACKUP: 'false'
+      INIT_RESTORE: 'false'
