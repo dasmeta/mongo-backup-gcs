@@ -11,7 +11,7 @@ if [[ -n "${NEWEST_BACKUP_FILE}" ]]; then
     cd /
     echo "=> Compression done!"
     echo "=> Migrating to Google Cloud Storage..."
-    gcloud auth activate-service-account --key-file /*.json
+    gcloud auth activate-service-account --key-file /google-service-account/*.json
     gsutil cp /${NEWEST_BACKUP_FILE}.zip gs://"${STORAGE}"/
     echo "=> Migration done!"
     echo "=> Removing zipped file from container"

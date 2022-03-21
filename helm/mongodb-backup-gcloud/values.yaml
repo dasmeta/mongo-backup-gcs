@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: dasmeta/mongo-backup-gcloud
+  repository: dasmeta/mongo-backup-gcs
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: 1.0.21
@@ -88,12 +88,12 @@ google_service_account_json: google_service_account
 config:
   MONGODB_HOST: host
   MONGODB_PORT: port
-  MONGODB_URI: "mongodb://backup:VfZYPXPXjL76DqYBB@main-mongodb-headless/trainer_bot?replicaSet=rs0"
+  MONGODB_URI: "mongodb://test:5QC@main-mongodb-headless:27017/trainer_bot?replicaSet=rs0&authSource=trainer_bot"
   MONGO_INITDB_ROOT_USERNAME: user
   MONGO_INITDB_ROOT_PASSWORD: password
   GOOGLE_STORAGE: mongo-backup-ncet
   MAX_BACKUPS: 30
   CRON_SCHEDULE: "*/3 * * * *"
-  RUN_AS_DAEMON: "true"
+  RUN_AS_DAEMON: false
   INIT_BACKUP: "false"
   INIT_RESTORE: "false"
