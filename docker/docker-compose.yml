@@ -14,7 +14,7 @@ services:
       MONGODB_URI: "mongodb://backup:VfZYPXPXjL76DqYBB@main-mongodb-headless/trainer_bot?replicaSet=rs0"
       MONGO_INITDB_ROOT_USERNAME: user
       MONGO_INITDB_ROOT_PASSWORD: password
-      GOOGLE_STORAGE: mongo-backup-ncet
+      GOOGLE_STORAGE: google-storage-name
       MAX_BACKUPS: 30
       CRON_SCHEDULE: "*/3 * * * *"
       GCLOUD_KEY: 
