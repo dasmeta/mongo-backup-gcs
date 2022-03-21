@@ -11,10 +11,13 @@ services:
     environment:
       MONGODB_HOST: host
       MONGODB_PORT: port
+      MONGODB_URI: "mongodb://backup:VfZYPXPXjL76DqYBB@main-mongodb-headless/trainer_bot?replicaSet=rs0"
       MONGO_INITDB_ROOT_USERNAME: user
       MONGO_INITDB_ROOT_PASSWORD: password
-      GOOGLE_STORAGE: google-storage-name
+      GOOGLE_STORAGE: mongo-backup-ncet
       MAX_BACKUPS: 30
-      CRON_TIME: "0 0 * * *"
+      CRON_SCHEDULE: "*/3 * * * *"
+      GCLOUD_KEY: 
+      RUN_AS_DAEMON: 'true'
       INIT_BACKUP: 'false'
       INIT_RESTORE: 'false'
