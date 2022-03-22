@@ -1,3 +1,8 @@
+variable "app_name" {
+  type    = string
+  default = "mongodb-backup"
+}
+
 variable "mongodb_host" {
   type    = string
   default = "host"

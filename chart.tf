@@ -12,7 +12,7 @@ module "release" {
   repository = "https://charts.helm.sh/stable"
 
   app = {
-    name          = "mongodb-backup"
+    name          = "${var.app_name}"
     version       = "0.1.0"
     chart         = "${path.module}/helm/mongodb-backup-gcloud"
     force_update  = true
