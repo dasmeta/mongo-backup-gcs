@@ -88,7 +88,7 @@ google_service_account_json: google_service_account
 config:
   MONGODB_HOST: host
   MONGODB_PORT: port
-  MONGODB_URI: "mongodb://test:5QC@main-mongodb-headless:27017/trainer_bot?replicaSet=rs0&authSource=trainer_bot"
+  MONGODB_URI: "mongodb://test:5QC@main-mongodb-headless:27017/trainer?replicaSet=rs0&authSource=trainer"
   MONGO_INITDB_ROOT_USERNAME: user
   MONGO_INITDB_ROOT_PASSWORD: password
   GOOGLE_STORAGE: mongo-backup-ncet
