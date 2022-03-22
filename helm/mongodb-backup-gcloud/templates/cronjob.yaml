@@ -28,7 +28,7 @@ spec:
           volumes:
           - name: "gcloud-credental"
             secret:
-              secretName: gcloud-credental
+              secretName: {{ include "mongodb-backup-aws.fullname" . }}
               defaultMode: 0600          
           restartPolicy: Never
 {{- end }}
