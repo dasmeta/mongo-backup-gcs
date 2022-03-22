@@ -1,5 +1,4 @@
-FROM bitnami/minideb:jessie
-LABEL maintainer="Razmik Avetikyan <razmik.avetikyan@fouraitch.com>"
+FROM bitnami/minideb:jessie-amd64
 
 RUN install_packages apt-transport-https cron curl zip lsb-release unzip
 
@@ -16,7 +15,5 @@ RUN mkdir -p /backup /restore
 COPY migrate_backup_gs.sh restore.sh run.sh tmp_mongo_user.js /
 
 RUN chmod +x /run.sh
-
-ENV CRON_TIME='0 0 * * *'
 
 ENTRYPOINT ["/bin/bash", "/run.sh"]
