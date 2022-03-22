@@ -58,7 +58,7 @@ module "release" {
       value = "${var.max_backups}"
     },
     {
-      name  = "config.CRON_TIME"
+      name  = "config.CRON_SCHEDULE"
       value = "${var.cron_time}"
     },
     {

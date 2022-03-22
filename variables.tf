@@ -1,7 +1,6 @@
 variable "mongodb_host" {
-  type        = string
-  default     = "host"
-  description = "Size of the backup volume storage. Should be enough big to fit backup files."
+  type    = string
+  default = "host"
 }
 
 variable "mongodb_port" {
@@ -11,7 +10,7 @@ variable "mongodb_port" {
 
 variable "mongodb_uri" {
   type    = string
-  default = "mongodb://backup:VfZYPXPXjL76DqYBB@main-mongodb-headless/trainer_bot?replicaSet=rs0"
+  default = "mongodb://username:password@host/database?replicaSet=rs0"
 }
 
 variable "mongo_initdb_root_username" {
@@ -26,7 +25,7 @@ variable "mongo_initdb_root_password" {
 
 variable "google_storage" {
   type    = string
-  default = "mongo-backup-ncet"
+  default = "mongo-backup"
 }
 
 variable "max_backups" {
@@ -60,7 +59,7 @@ variable "google_service_account_json" {
 
 variable "image_tag" {
   type    = string
-  default = "1.0.21"
+  default = "latest"
 }
 
 variable "storage_class" {

@@ -22,5 +22,13 @@ spec:
                 name: {{ include "mongodb-backup-aws.fullname" . }}
             resources:
               {{- toYaml .Values.resources | nindent 14 }}
+            volumeMounts:
+            - name: "gcloud-credental"
+              mountPath: "/google-service-account"
+          volumes:
+          - name: "gcloud-credental"
+            secret:
+              secretName: gcloud-credental
+              defaultMode: 0600          
           restartPolicy: Never
 {{- end }}
